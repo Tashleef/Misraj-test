@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id Int @id @default(autoincrement())
+  username String @unique
+  fullName String 
+  password String
+  meetings Meet[]
+  records Record[]
+}
+
+enum meetStatus {
+  ongoing
+  ended
+}
+
+model Meet {
+  id Int @id @default(autoincrement())
+  uuid String? @unique @default(uuid())
+  status meetStatus? @default(ongoing)
+  users User[]
+  record Record[]
+}
+
+enum recordStatus {
+  paused
+  ongoing
+  ended
+}
+
+model Record {
+  id Int @id @default(autoincrement())
+  meetId Int
+  userId Int
+  meet Meet @relation(fields: [meetId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+  duration BigInt
+  status recordStatus
+  recordingSince DateTime
+}
+

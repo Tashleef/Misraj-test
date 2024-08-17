@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Meet" ALTER COLUMN "uuid" DROP NOT NULL;
