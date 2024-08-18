@@ -89,9 +89,11 @@ export class MeetController {
   ) {
     this.meetValidation.getAllRecordedMeeting({ query });
     const { pagination } = paginationParser(query);
-    const filter = new RecordFilter().getUser(user.id).getStatus(query.status);
+    const filter = new RecordFilter()
+      .getUser(user.id)
+      .getStatus(query.status)
+      .getMeet(+query.meetId);
 
-    console.log(filter.where.AND);
     const { rows, count } = await this.meetService.getAllRecords(
       pagination,
       filter.build(),

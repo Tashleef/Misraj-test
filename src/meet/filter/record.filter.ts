@@ -22,6 +22,15 @@ export class RecordFilter {
     return this;
   }
 
+  getMeet(meetId: number) {
+    if (!meetId) return this;
+    (this.where.AND as Array<Prisma.RecordWhereInput>).push({
+      meetId,
+    });
+
+    return this;
+  }
+
   getStatus(status: recordStatus) {
     if (!status) return this;
     (this.where.AND as Array<Prisma.RecordWhereInput>).push({

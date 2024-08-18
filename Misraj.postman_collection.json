@@ -1,0 +1,935 @@
+{
+	"info": {
+		"_postman_id": "0b2c0b18-8b45-498a-9231-3a94ccde3f2f",
+		"name": "Misraj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18163098"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"faek\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"faek\",\n    \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/v1/auth/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-6vU8oUKgCIuJs9WFO+BvbKsqunM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Aug 2024 11:25:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzODA3NTQwLCJleHAiOjE3MjQ0MTIzNDB9.xy6uyIq9hHfiYZYsf7AngLH5uERrwOLUI9MVAmu8HmA\",\n        \"user\": {\n            \"id\": 1\n        }\n    },\n    \"path\": \"/api/v1/auth/login\",\n    \"duration\": \"1ms\",\n    \"method\": \"POST\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"faek2\",\n    \"fullName\": \"faek alayoubi\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/signup",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"faek\",\n    \"fullName\": \"faek alayoubi\",\n    \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/v1/auth/signup",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-kVw13hqwG6+/YlS6FvRfxoWIq8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Aug 2024 11:25:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzODA3NTA1LCJleHAiOjE3MjQ0MTIzMDV9.wws_fTxit9rM3CHA6fFEQYQ_MNlpi4jaZXOuc69mTl4\",\n        \"user\": {\n            \"id\": 1\n        }\n    },\n    \"path\": \"/api/v1/auth/signup\",\n    \"duration\": \"149ms\",\n    \"method\": \"POST\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Meet",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e-X+wOllamPRxlchF3h45BWihvIeE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Aug 2024 18:24:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"3635003c-68c9-4e95-bc03-d90c1f7f0366\"\n    },\n    \"path\": \"/api/v1/meet\",\n    \"duration\": \"41ms\",\n    \"method\": \"POST\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Start Recording",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet/:id/start-recording",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet",
+								":id",
+								"start-recording"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3df0880f-5f72-4669-9502-efba78794007"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Start Recording",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet/:id/start-recording",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet",
+										":id",
+										"start-recording"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3df0880f-5f72-4669-9502-efba78794007"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-GJRRyG4wwV/OW3ZFpJFym+e3+ig\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Aug 2024 09:42:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1\n    },\n    \"path\": \"/api/v1/meet/3df0880f-5f72-4669-9502-efba78794007/start-recording\",\n    \"duration\": \"19ms\",\n    \"method\": \"POST\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Pause-Resume Recording",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet/:id/pause-resume",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet",
+								":id",
+								"pause-resume"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3df0880f-5f72-4669-9502-efba78794007"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Stop-Resume Recording",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet/:id/pause-resume",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet",
+										":id",
+										"pause-resume"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3df0880f-5f72-4669-9502-efba78794007"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6c-8XvcAwmzTtWR68HsuJUVd4Fq/XI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Aug 2024 09:43:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"path\": \"/api/v1/meet/3df0880f-5f72-4669-9502-efba78794007/pause-resume\",\n    \"duration\": \"29ms\",\n    \"method\": \"PATCH\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Stop Recording",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet/:id/pause-resume",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet",
+								":id",
+								"pause-resume"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3df0880f-5f72-4669-9502-efba78794007"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Stop-Resume Recording",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet/:id/pause-resume",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet",
+										":id",
+										"pause-resume"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3df0880f-5f72-4669-9502-efba78794007"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6c-8XvcAwmzTtWR68HsuJUVd4Fq/XI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Aug 2024 09:43:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"path\": \"/api/v1/meet/3df0880f-5f72-4669-9502-efba78794007/pause-resume\",\n    \"duration\": \"29ms\",\n    \"method\": \"PATCH\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Join Meet",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet/:id/join",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet",
+								":id",
+								"join"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3df0880f-5f72-4669-9502-efba78794007"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Join Meet",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet/:id/join",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet",
+										":id",
+										"join"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3df0880f-5f72-4669-9502-efba78794007"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-x3qLEEkk3dlR9y0OCYRZE0sy7KU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Aug 2024 10:46:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"path\": \"/api/v1/meet/3df0880f-5f72-4669-9502-efba78794007/join\",\n    \"duration\": \"28ms\",\n    \"method\": \"PATCH\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Leave Meet",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet/:id/leave",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet",
+								":id",
+								"leave"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3635003c-68c9-4e95-bc03-d90c1f7f0366"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Leave Meet",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet/:id/leave",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet",
+										":id",
+										"leave"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3635003c-68c9-4e95-bc03-d90c1f7f0366"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-z8esCZ5QlWvgiZ15Ps7fQ0cC/wQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Aug 2024 18:25:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"path\": \"/api/v1/meet/3635003c-68c9-4e95-bc03-d90c1f7f0366/leave\",\n    \"duration\": \"11ms\",\n    \"method\": \"PATCH\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet/:id",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "25ba9235-f048-4baa-971e-260b062602f5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet/:id",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "25ba9235-f048-4baa-971e-260b062602f5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4-zhz63UPyb7oBbmgMfBdU/lhlq6E\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Aug 2024 18:40:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"25ba9235-f048-4baa-971e-260b062602f5\",\n        \"status\": \"ongoing\",\n        \"users\": [\n            {\n                \"id\": 1,\n                \"fullName\": \"faek alayoubi\"\n            }\n        ]\n    },\n    \"path\": \"/api/v1/meet/25ba9235-f048-4baa-971e-260b062602f5\",\n    \"duration\": \"164ms\",\n    \"method\": \"GET\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Recording",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/meet/records?meetId=4&status=ended",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"meet",
+								"records"
+							],
+							"query": [
+								{
+									"key": "meetId",
+									"value": "4"
+								},
+								{
+									"key": "status",
+									"value": "ended"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Recording",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/meet/records",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"meet",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-DUk7DQpetjwKAKUvn0A5KqiEJg0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2024 00:56:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalRecords\": 1,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"status\": \"ended\",\n            \"duration\": 13\n        }\n    ],\n    \"path\": \"/api/v1/meet/records\",\n    \"duration\": \"46ms\",\n    \"method\": \"GET\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzIzODkxNTg0LCJleHAiOjE3MjQ0OTYzODR9.L_HQ9DVFWmqmVtQZVA-QdZivnFV21hD3gr0wYaevmng",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
