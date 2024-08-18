@@ -1,15 +1,8 @@
 import * as joi from 'joi';
 import { paginationConstant } from './pagination.constant';
 
-export const pagination = (
-  needPaginationValidValues: [boolean, ...boolean[]],
-) => {
+export const pagination = () => {
   return {
-    total: joi.boolean().default(paginationConstant.total),
-    needPagination: joi
-      .boolean()
-      .required()
-      .valid(...needPaginationValidValues),
     page: joi.number().min(0).default(paginationConstant.page),
     limit: joi
       .number()

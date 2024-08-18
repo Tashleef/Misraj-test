@@ -1,10 +1,10 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { meetStatus, recordStatus, User } from '@prisma/client';
+import { meetStatus, Prisma, recordStatus, User } from '@prisma/client';
 import { Params } from 'package/component/params/params';
 import { Pagination } from 'package/pagination/dto';
 import { IUser } from 'package/strategies/jwt/jwt-payload';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { MeetParams } from '../dto/request';
+import { GetAllRecordedMeetings, MeetParams } from '../dto/request';
 import { MeetError } from './meet-error.service';
 import { Meet } from '../dto/data';
 
@@ -129,8 +129,6 @@ export class MeetApiService {
         );
     }
 
-    console.log(data);
-
     await this.prismaService.record.update({
       where: {
         id: retrievedRecord.id,
@@ -209,7 +207,27 @@ export class MeetApiService {
     return meet;
   }
 
-  // async getAll({ limit, skip }: Pagination) {}
+  async getAllRecords(
+    { limit, skip }: Pagination,
+    where: Prisma.RecordWhereInput,
+  ) {
+    const queries = [];
+    queries.push(
+      this.prismaService.record.findMany({
+        where,
+        skip,
+        take: limit,
+      }),
+    );
+    queries.push(this.prismaService.record.count({ where, skip, take: limit }));
+
+    const [rows, count] = await Promise.all(queries);
+
+    return {
+      rows,
+      count,
+    };
+  }
 
   async getOngoingMeetByUUID(uuid: string) {
     const meet = await this.prismaService.meet.findFirst({

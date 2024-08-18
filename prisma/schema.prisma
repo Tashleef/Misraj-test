@@ -48,7 +48,7 @@ model Record {
   userId Int
   meet Meet @relation(fields: [meetId], references: [id])
   user User @relation(fields: [userId], references: [id])
-  duration BigInt
+  duration Int
   status recordStatus
   recordingSince DateTime
 }

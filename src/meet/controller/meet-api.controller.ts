@@ -8,10 +8,12 @@ import { privilegeKeys } from 'package/utils/enums/privilege.enum';
 import { User } from 'package/decorator/param/user.decorator';
 import { Pagination } from 'package/pagination/dto';
 import { IUser } from 'package/strategies/jwt/jwt-payload';
-import { MeetParams } from '../dto/request';
+import { GetAllRecordedMeetings, MeetParams } from '../dto/request';
 import { GetMeetById } from '../dto/response/get-meet-by-id.dto';
 import { MeetValidation } from '../validation';
-import { InMeet } from '../guard/in-meet.guard';
+import { paginationParser } from 'package/pagination/pagination';
+import { RecordFilter } from '../filter/record.filter';
+import { GetRecords } from '../dto/response/get-records.dto';
 
 // authenticated controller is used for authentication
 // and as we are using recording we need to know the identity of the user that is recording
@@ -75,6 +77,31 @@ export class MeetController {
   async stopRecording(@Param() params: MeetParams, @User() user: IUser) {
     this.meetValidation.meetParams({ params });
     return await this.meetService.stopRecording(params, user);
+  }
+
+  @AuthorizedApi({
+    api: Api.GET,
+    url: '/records',
+  })
+  async getAllRecords(
+    @User() user: IUser,
+    @Query() query: GetAllRecordedMeetings,
+  ) {
+    this.meetValidation.getAllRecordedMeeting({ query });
+    const { pagination } = paginationParser(query);
+    const filter = new RecordFilter().getUser(user.id).getStatus(query.status);
+
+    console.log(filter.where.AND);
+    const { rows, count } = await this.meetService.getAllRecords(
+      pagination,
+      filter.build(),
+    );
+    return {
+      count,
+      rows: rows.map((record) => {
+        return new GetRecords({ record }).toObject();
+      }),
+    };
   }
 
   @AuthorizedApi({
